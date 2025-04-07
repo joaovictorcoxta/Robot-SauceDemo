@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-07T15:39:32.096285" rpa="false" schemaversion="5">
+<suite id="s1" name="Compras" source="c:\Users\joaovictor\Desktop\RobotCurso\suites\compras\compras.robot">
+<test id="s1-t1" name="TC01: Testar Vários Usuários" line="7">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-07T15:39:32.408390" level="INFO">Testando user tipo: standard com login: standard_user</msg>
+<arg>Testando user tipo: ${tipo} com login: ${usuario}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-07T15:39:32.407699" elapsed="0.003326"/>
+</kw>
+<kw name="Quando Abro site da saucedemo" owner="geral">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:32.413845" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/index.html'.</msg>
+<arg>${geral.saucedemo}</arg>
+<arg>${geral.BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-07T15:39:32.412535" elapsed="2.246959"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-07T15:39:34.660146" elapsed="0.335553"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:32.411874" elapsed="2.584013"/>
+</kw>
+<kw name="E insiro login e senha" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:34.997015" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${login.input_name}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:34.996430" elapsed="0.121547"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.118951" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>${login.input_password}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.118390" elapsed="0.078848"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.197982" level="INFO">Clicking element 'login-button'.</msg>
+<arg>${login.input_buttonLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.197494" elapsed="0.291499"/>
+</kw>
+<arg>${usuario}</arg>
+<status status="PASS" start="2025-04-07T15:39:34.996093" elapsed="0.493242"/>
+</kw>
+<kw name="E adiciono ao Carrinho" owner="page_itens">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.513641" level="INFO">${botoes} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.12")&gt;, &lt;selenium.webdriv...</msg>
+<var>${botoes}</var>
+<arg>${itens.button_addtoCart}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.491432" elapsed="0.022652"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.515185" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.12")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.514850" elapsed="0.153750"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.12")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:35.514593" elapsed="0.154271"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.669825" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.13")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.669451" elapsed="0.072830"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.13")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:35.669176" elapsed="0.073494"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.743683" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.14")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.743286" elapsed="0.068352"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.14")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:35.742988" elapsed="0.068892"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.812761" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.15")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.812417" elapsed="0.047254"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.15")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:35.812153" elapsed="0.047732"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.860716" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.16")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.860384" elapsed="0.044018"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.16")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:35.860113" elapsed="0.044444"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.905709" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.17")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.905341" elapsed="0.046816"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f5e9a1430c98997f161671876f482d16", element="f.22D0DC5DE5CEAEB1CF9E0D8CF8956502.d.7A47598E5829C49023E9F4D694A9D993.e.17")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:35.904935" elapsed="0.047395"/>
+</iter>
+<var>${botao}</var>
+<value>@{botoes}</value>
+<status status="PASS" start="2025-04-07T15:39:35.514281" elapsed="0.438163"/>
+</for>
+<status status="PASS" start="2025-04-07T15:39:35.490958" elapsed="0.461798"/>
+</kw>
+<kw name="E Verifico Carrinho e realizo Checkout" owner="carrinho_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:35.954132" level="INFO">Clicking element '//a[@href='./cart.html']'.</msg>
+<arg>${carrinho.div_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:35.953400" elapsed="0.110896"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${carrinho.a_Checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.064543" elapsed="0.017214"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:36.082486" level="INFO">Clicking element '//a[@class='btn_action checkout_button']'.</msg>
+<arg>${carrinho.a_Checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.082007" elapsed="0.635573"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:35.953019" elapsed="0.764955"/>
+</kw>
+<kw name="E insiro dados do comprador" owner="dadoscomprador_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dados_comprador.div_checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.718948" elapsed="0.050053"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:36.769936" level="INFO">Typing text 'joao' into text field '//input[@id="first-name"]'.</msg>
+<arg>${dados_comprador.input_firstname}</arg>
+<arg>${dados_registro.nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.769252" elapsed="0.073955"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:36.845345" level="INFO">Typing text 'costa' into text field '//input[@id="last-name"]'.</msg>
+<arg>${dados_comprador.input_lastname}</arg>
+<arg>${dados_registro.segundonome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.843617" elapsed="0.062189"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:36.909016" level="INFO">Typing text '35501250' into text field '//input[@id="postal-code"]'.</msg>
+<arg>${dados_comprador.input_postalcode}</arg>
+<arg>${dados_registro.postalcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.906345" elapsed="0.074472"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:36.981568" level="INFO">Clicking element '//input[@value="CONTINUE"]'.</msg>
+<arg>${dados_comprador.input_btnContinue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:36.981074" elapsed="0.271217"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:36.718349" elapsed="0.534251"/>
+</kw>
+<kw name="Entao Finalizo Compra" owner="finalizarCompra">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${finalizar_Compra.div_CheckOverview}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:37.253395" elapsed="0.112122"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:37.366225" level="INFO">Clicking element '//a[contains(text(),"FINISH")]'.</msg>
+<arg>${finalizar_Compra.a_finish}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:37.365762" elapsed="0.383776"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:37.252898" elapsed="0.497224"/>
+</kw>
+<var name="${tipo}">standard</var>
+<var name="${usuario}">standard_user</var>
+<status status="PASS" start="2025-04-07T15:39:32.405481" elapsed="5.344856"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-07T15:39:37.752361" level="INFO">Testando user tipo: problem com login: problem_user</msg>
+<arg>Testando user tipo: ${tipo} com login: ${usuario}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-07T15:39:37.751539" elapsed="0.001506"/>
+</kw>
+<kw name="Quando Abro site da saucedemo" owner="geral">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:37.754433" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/index.html'.</msg>
+<arg>${geral.saucedemo}</arg>
+<arg>${geral.BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-07T15:39:37.753823" elapsed="3.089215"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-07T15:39:40.843370" elapsed="0.032528"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:37.753555" elapsed="3.122596"/>
+</kw>
+<kw name="E insiro login e senha" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:40.877626" level="INFO">Typing text 'problem_user' into text field 'id:user-name'.</msg>
+<arg>${login.input_name}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:40.876876" elapsed="0.132626"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.010228" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>${login.input_password}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.009749" elapsed="0.111548"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.122709" level="INFO">Clicking element 'login-button'.</msg>
+<arg>${login.input_buttonLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.121575" elapsed="0.253280"/>
+</kw>
+<arg>${usuario}</arg>
+<status status="PASS" start="2025-04-07T15:39:40.876430" elapsed="0.498606"/>
+</kw>
+<kw name="E adiciono ao Carrinho" owner="page_itens">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.385862" level="INFO">${botoes} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.16")&gt;, &lt;selenium.webdriv...</msg>
+<var>${botoes}</var>
+<arg>${itens.button_addtoCart}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.375495" elapsed="0.010531"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.386648" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.16")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.386460" elapsed="0.236153"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.16")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:41.386314" elapsed="0.236583"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.625088" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.17")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.624094" elapsed="0.079638"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.17")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:41.623556" elapsed="0.080337"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.704417" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.18")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.704209" elapsed="0.073789"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.18")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:41.704048" elapsed="0.074185"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.779100" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.19")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.778719" elapsed="0.051934"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.19")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:41.778474" elapsed="0.052345"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.831598" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.20")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.831171" elapsed="0.049575"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.20")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:41.830992" elapsed="0.049974"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:41.881808" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.21")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:41.881478" elapsed="0.119955"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3d271deda3ee6741767f8d92e57696d3", element="f.28D4B721A3755AB20F4019C42B17C40C.d.CA0D14AF2BD807807A059B25D884435D.e.21")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:41.881227" elapsed="0.120453"/>
+</iter>
+<var>${botao}</var>
+<value>@{botoes}</value>
+<status status="PASS" start="2025-04-07T15:39:41.386142" elapsed="0.615699"/>
+</for>
+<status status="PASS" start="2025-04-07T15:39:41.375238" elapsed="0.626855"/>
+</kw>
+<kw name="E Verifico Carrinho e realizo Checkout" owner="carrinho_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.003601" level="INFO">Clicking element '//a[@href='./cart.html']'.</msg>
+<arg>${carrinho.div_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.002844" elapsed="0.167582"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${carrinho.a_Checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.170985" elapsed="0.042503"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.214210" level="INFO">Clicking element '//a[@class='btn_action checkout_button']'.</msg>
+<arg>${carrinho.a_Checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.213741" elapsed="0.148090"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:42.002401" elapsed="0.359733"/>
+</kw>
+<kw name="E insiro dados do comprador" owner="dadoscomprador_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dados_comprador.div_checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.362759" elapsed="0.046172"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.409987" level="INFO">Typing text 'joao' into text field '//input[@id="first-name"]'.</msg>
+<arg>${dados_comprador.input_firstname}</arg>
+<arg>${dados_registro.nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.409303" elapsed="0.078197"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.489111" level="INFO">Typing text 'costa' into text field '//input[@id="last-name"]'.</msg>
+<arg>${dados_comprador.input_lastname}</arg>
+<arg>${dados_registro.segundonome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.487810" elapsed="0.066574"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.556142" level="INFO">Typing text '35501250' into text field '//input[@id="postal-code"]'.</msg>
+<arg>${dados_comprador.input_postalcode}</arg>
+<arg>${dados_registro.postalcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.554627" elapsed="0.098218"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.653587" level="INFO">Clicking element '//input[@value="CONTINUE"]'.</msg>
+<arg>${dados_comprador.input_btnContinue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.653102" elapsed="0.194691"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:42.362448" elapsed="0.485659"/>
+</kw>
+<kw name="Entao Finalizo Compra" owner="finalizarCompra">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${finalizar_Compra.div_CheckOverview}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.848842" elapsed="0.023213"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:42.875168" level="INFO">Clicking element '//a[contains(text(),"FINISH")]'.</msg>
+<arg>${finalizar_Compra.a_finish}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:42.872745" elapsed="0.162918"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:42.848395" elapsed="0.187576"/>
+</kw>
+<var name="${tipo}">problem</var>
+<var name="${usuario}">problem_user</var>
+<status status="PASS" start="2025-04-07T15:39:37.750806" elapsed="5.285282"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-07T15:39:43.037064" level="INFO">Testando user tipo: permormance com login: performance_glitch_user</msg>
+<arg>Testando user tipo: ${tipo} com login: ${usuario}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-07T15:39:43.036677" elapsed="0.000672"/>
+</kw>
+<kw name="Quando Abro site da saucedemo" owner="geral">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:43.045109" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/index.html'.</msg>
+<arg>${geral.saucedemo}</arg>
+<arg>${geral.BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-07T15:39:43.042440" elapsed="3.060659"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-07T15:39:46.103647" elapsed="2.549863"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:43.039552" elapsed="5.614243"/>
+</kw>
+<kw name="E insiro login e senha" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:48.657130" level="INFO">Typing text 'performance_glitch_user' into text field 'id:user-name'.</msg>
+<arg>${login.input_name}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:48.654770" elapsed="0.175814"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:48.831381" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>${login.input_password}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:48.830891" elapsed="0.119446"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:48.951514" level="INFO">Clicking element 'login-button'.</msg>
+<arg>${login.input_buttonLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:48.950718" elapsed="5.788283"/>
+</kw>
+<arg>${usuario}</arg>
+<status status="PASS" start="2025-04-07T15:39:48.654112" elapsed="6.087426"/>
+</kw>
+<kw name="E adiciono ao Carrinho" owner="page_itens">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:54.784695" level="INFO">${botoes} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.16")&gt;, &lt;selenium.webdriv...</msg>
+<var>${botoes}</var>
+<arg>${itens.button_addtoCart}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:54.743096" elapsed="0.041824"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:54.785883" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.16")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:54.785553" elapsed="0.096570"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.16")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:54.785339" elapsed="0.097017"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:54.883350" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.18")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:54.882954" elapsed="0.082422"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.18")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:54.882693" elapsed="0.082844"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:54.966075" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.21")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:54.965861" elapsed="0.035166"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.21")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:54.965695" elapsed="0.035647"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.002020" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.24")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.001756" elapsed="0.036249"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.24")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:55.001577" elapsed="0.036603"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.039008" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.26")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.038666" elapsed="0.042543"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.26")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:55.038401" elapsed="0.043001"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.082128" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.28")&gt;'.</msg>
+<arg>${botao}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.081861" elapsed="0.038020"/>
+</kw>
+<var name="${botao}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c7ae9887c202ccc43415590c691a43aa", element="f.1ED9B4BA34EE147CA065BAFFE7013D16.d.31A66B0E512EF8C399EADA89916517A1.e.28")&gt;</var>
+<status status="PASS" start="2025-04-07T15:39:55.081631" elapsed="0.038563"/>
+</iter>
+<var>${botao}</var>
+<value>@{botoes}</value>
+<status status="PASS" start="2025-04-07T15:39:54.785092" elapsed="0.335258"/>
+</for>
+<status status="PASS" start="2025-04-07T15:39:54.742503" elapsed="0.377983"/>
+</kw>
+<kw name="E Verifico Carrinho e realizo Checkout" owner="carrinho_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.123403" level="INFO">Clicking element '//a[@href='./cart.html']'.</msg>
+<arg>${carrinho.div_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.121649" elapsed="0.116652"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${carrinho.a_Checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.238854" elapsed="0.039830"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.279474" level="INFO">Clicking element '//a[@class='btn_action checkout_button']'.</msg>
+<arg>${carrinho.a_Checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.278965" elapsed="0.201112"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:55.120737" elapsed="0.359533"/>
+</kw>
+<kw name="E insiro dados do comprador" owner="dadoscomprador_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dados_comprador.div_checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.480745" elapsed="0.017248"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.498971" level="INFO">Typing text 'joao' into text field '//input[@id="first-name"]'.</msg>
+<arg>${dados_comprador.input_firstname}</arg>
+<arg>${dados_registro.nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.498275" elapsed="0.186100"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.686156" level="INFO">Typing text 'costa' into text field '//input[@id="last-name"]'.</msg>
+<arg>${dados_comprador.input_lastname}</arg>
+<arg>${dados_registro.segundonome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.684885" elapsed="0.119089"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.804953" level="INFO">Typing text '35501250' into text field '//input[@id="postal-code"]'.</msg>
+<arg>${dados_comprador.input_postalcode}</arg>
+<arg>${dados_registro.postalcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.804280" elapsed="0.088701"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:55.893734" level="INFO">Clicking element '//input[@value="CONTINUE"]'.</msg>
+<arg>${dados_comprador.input_btnContinue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:55.893247" elapsed="0.143230"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:55.480468" elapsed="0.556343"/>
+</kw>
+<kw name="Entao Finalizo Compra" owner="finalizarCompra">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${finalizar_Compra.div_CheckOverview}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-07T15:39:56.037562" elapsed="0.026052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-07T15:39:56.064403" level="INFO">Clicking element '//a[contains(text(),"FINISH")]'.</msg>
+<arg>${finalizar_Compra.a_finish}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-07T15:39:56.063881" elapsed="0.154276"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:56.037123" elapsed="0.181369"/>
+</kw>
+<var name="${tipo}">permormance</var>
+<var name="${usuario}">performance_glitch_user</var>
+<status status="PASS" start="2025-04-07T15:39:43.036390" elapsed="13.182245"/>
+</iter>
+<var>${tipo}</var>
+<var>${usuario}</var>
+<value>&amp;{users}</value>
+<status status="PASS" start="2025-04-07T15:39:32.404957" elapsed="23.813820"/>
+</for>
+<kw name="Fechar Navegador" owner="geral">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-07T15:39:56.220234" elapsed="2.235273"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:56.219636" elapsed="2.236190"/>
+</kw>
+<status status="PASS" start="2025-04-07T15:39:32.404269" elapsed="26.055483"/>
+</test>
+<status status="PASS" start="2025-04-07T15:39:32.100527" elapsed="26.421417"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Compras" id="s1" pass="1" fail="0" skip="0">Compras</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
